@@ -1,7 +1,17 @@
+import java.util.*;
 class RnaTranscription {
 
+    private static Map<Character,Character> nucleotideComplements;
+    static{
+        nucleotideComplements = Map.of('G', 'C', 'C', 'G', 'T', 'A', 'A', 'U');
+    }
     String transcribe(String dnaStrand) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        String rna="";
+     char[] nucleotides = dnaStrand.toCharArray();
+     for(char nucleotide : nucleotides){
+         rna+=nucleotideComplements.get(nucleotide);
+     }
+     return rna;
     }
 
 }
